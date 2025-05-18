@@ -146,18 +146,21 @@
     Whether it's something you loved or a suggestion for growth — we’re listening. 💡  
     We appreciate your time and insights. Let’s build better, together!
   </p>
-  <form action="https://formspree.io/f/mjkwjdpl" method="POST">
-    <label for="name">Your Name</label>
-    <input type="text" name="name" id="name" required />
+  <form name="feedback" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="feedback" />
+  
+  <label for="name">Your Name</label>
+  <input type="text" id="name" name="name" required />
 
-    <label for="email">Your Email</label>
-    <input type="email" name="email" id="email" required />
+  <label for="email">Your Email</label>
+  <input type="email" id="email" name="email" required />
 
-    <label for="message">Your Message</label>
-    <textarea name="message" id="message" rows="5" required></textarea>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
 
-    <button type="submit">Send Feedback</button>
-  </form>
+  <button type="submit">Send Feedback</button>
+</form>
+
 </section>
 
   <footer>
