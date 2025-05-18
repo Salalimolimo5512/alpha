@@ -1,194 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    color: #333;
-  }
-  
-  header {
-    background-color: #004aad;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-  }
-  .logo {
-    height: 10px;
-    width: 10px;
-  }
-  
-  nav {
-    background-color: #f2f2f2;
-    border-bottom: 2px solid #004aad;
-  }
-  
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: linear-gradient(135deg, #004aad, #003080);
+  color: white;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+nav {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #004aad;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #004aad;
+  font-weight: bold;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #004aad;
+  color: white;
+  transform: scale(1.05);
+}
+
+section {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  color: #004aad;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 0.75rem;
+  border: 1px solid #004aad;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #003080;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 64, 255, 0.3);
+}
+
+form button {
+  background-color: #004aad;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #003080;
+}
+
+footer {
+  text-align: center;
+  background-color: #f2f2f2;
+  color: #555;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  border-top: 2px solid #004aad;
+}
+
+/* Team Section */
+#team {
+  padding: 4rem 1rem;
+  background: #fff;
+  text-align: center;
+  color: #004aad;
+}
+
+#team h2 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Card Flip */
+.card {
+  width: 220px;
+  height: 280px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: all 0.4s ease;
+}
+
+.card-front {
+  background: #fff;
+}
+
+.card-front img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #003080;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front h3 {
+  margin: 0;
+}
+
+.card-back {
+  background: #004aad;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* Discord Icon */
+.fa-discord {
+  font-size: 28px;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.fa-discord:hover {
+  transform: scale(1.3);
+  color: #7289da;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  nav li {
-    margin: 0 1rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #004aad;
-    font-weight: bold;
-    padding: 1rem;
-    display: inline-block;
-  }
-  
-  nav a:hover {
-    background-color: #004aad;
-    color: white;
-    transition: 0.3s;
-  }
-  
-  section {
-    padding: 2rem;
-    border-bottom: 1px solid #fff;
-  }
-  
-  h2 {
-    color: #004aad;
-  }
-  
-  ul {
-    padding-left: 1.5rem;
-  }
-  
-  form {
-    display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin-top: 1rem;
-  }
-  
-  form label {
-    margin: 0.5rem 0 0.25rem;
-    font-weight: bold;
-  }
-  
-  form input,
-  form textarea {
-    padding: 0.5rem;
-    border: 1px solid #004aad;
-    border-radius: 4px;
-  }
-  
-  form button {
-    margin-top: 1rem;
-    background-color: #004aad;
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  form button:hover {
-    background-color: #003080;
-  }
-  
-  footer {
-    text-align: center;
-    background-color: #f2f2f2;
-    color: #555;
-    padding: 1rem;
-    font-size: 0.9rem;
-    border-top: 2px solid #004aad;
-  }
-  #team {
-    padding: 40px;
-    background: #ffff;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    color: #004aad;
-  }
-  
-  #team h2 {
-    margin-bottom: 30px;
-  }
-  
-  .team-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    width: 200px;
-    height: 260px;
-    perspective: 1000px;
-    cursor: pointer;
-  }
-  
-  .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .card-front,
-  .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    backface-visibility: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 15px;
-  }
-  
-  .card-front {
-    background: #fff;
-  }
-  
-  .card-front img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #003080;
-  }
-  
-  .card-front h3 {
-    margin: 0;
-  }
-  
-  .card-back {
-    background: #004aad;
-    color: white;
-    transform: rotateY(180deg);
-    padding: 20px;
-    font-size: 0.9em;
   }
 
-  .fa-discord {
-    font-size: 24px;
-    color: #FFFFFF;
-    transition: transform 0.2s;
+  .team-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .fa-discord:hover {
-    transform: scale(1.2);
-  }
-  
 
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
