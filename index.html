@@ -5,8 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BioBase Alpha</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Hide honeypot field */
+    .hidden {
+      display: none;
+      visibility: hidden;
+    }
+  </style>
 </head>
 
 <body>
@@ -31,16 +38,21 @@
   <section id="home">
     <h2>Welcome to BioBase Alpha!</h2>
     <p>
-      BioBase Alpha is a cutting-edge initiative dedicated to advancing sustainable agriculture in extraterrestrial environments.  
-      Our mission is to develop innovative solutions that ensure reliable food production for long-duration space missions,  
+      BioBase Alpha is a cutting-edge initiative dedicated to advancing sustainable agriculture in extraterrestrial
+      environments.
+      Our mission is to develop innovative solutions that ensure reliable food production for long-duration space missions,
       supporting human life beyond Earth while promoting environmental sustainability.
     </p>
   </section>
-  
 
   <section id="about">
     <h2>About</h2>
-    <p>BioBase Alpha is a robot that plants barley in space in special greenhouses with appropriate conditions. It provides food that is healthy and rich in nutriments for scientists, astronauts and cosmonauts in the ISS. With a VEX IQ drivebase, and a robotic  arm with different mechanisms, our robot can treat all steps of cultivation. And with temperature, humidity and light sensors, it can detect any change in conditions and/or a problem in the system. BioBase Alpha also treats, analyses information and takes autonomous decisions since it's AI enabled. Briefly, our solution is a complex agricultural system in space and has a lot of benefits.</p>
+    <p>BioBase Alpha is a robot that plants barley in space in special greenhouses with appropriate conditions. It
+      provides food that is healthy and rich in nutriments for scientists, astronauts and cosmonauts in the ISS. With a VEX
+      IQ drivebase, and a robotic arm with different mechanisms, our robot can treat all steps of cultivation. And with
+      temperature, humidity and light sensors, it can detect any change in conditions and/or a problem in the system.
+      BioBase Alpha also treats, analyses information and takes autonomous decisions since it's AI enabled. Briefly, our
+      solution is a complex agricultural system in space and has a lot of benefits.</p>
   </section>
 
   <section id="team">
@@ -138,30 +150,34 @@
       <li>Reducing and fighting space pollution</li>
     </ul>
   </section>
-<section id="contact">
-  <h2>Your Feedback Matters to Us!</h2>
-  <p>
-    Thank you for visiting BioBase Alpha 🌱 Your feedback plays a vital role in helping our team improve and innovate.  
-    By sharing your honest thoughts and experiences, you're directly supporting the development of a smarter, more impactful solution.  
-    Whether it's something you loved or a suggestion for growth — we’re listening. 💡  
-    We appreciate your time and insights. Let’s build better, together!
-  </p>
-  <form name="feedback" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="feedback" />
-  
-  <label for="name">Your Name</label>
-  <input type="text" id="name" name="name" required />
 
-  <label for="email">Your Email</label>
-  <input type="email" id="email" name="email" required />
+  <section id="contact">
+    <h2>Your Feedback Matters to Us!</h2>
+    <p>
+      Thank you for visiting BioBase Alpha 🌱 Your feedback plays a vital role in helping our team improve and innovate.
+      By sharing your honest thoughts and experiences, you're directly supporting the development of a smarter, more
+      impactful solution.
+      Whether it's something you loved or a suggestion for growth — we’re listening. 💡
+      We appreciate your time and insights. Let’s build better, together!
+    </p>
+    <form name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="feedback" />
+      <p class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+      </p>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
 
-  <button type="submit">Send Feedback</button>
-</form>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
 
-</section>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Feedback</button>
+    </form>
+  </section>
 
   <footer>
     <p>&copy; 2025 Mindcraft Alpha. All rights reserved.</p>
