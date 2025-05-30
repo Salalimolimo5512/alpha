@@ -236,3 +236,22 @@ footer {
     height: auto;
   }
 }
+
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 20ch;
+    }
+
+    100% {
+        width: 0;
+    }
+ #Home , h4 {
+    width: 20ch;
+    animation: typing 8s steps(25) infinite;
+    blink: 0.9s step-start infinite;
+ }
