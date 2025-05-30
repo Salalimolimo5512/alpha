@@ -250,6 +250,18 @@ footer {
   }
 }
 
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 20ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
 @keyframes blink {
   0%, 100% {
     border-color: transparent;
@@ -260,10 +272,15 @@ footer {
 }
 
 #Home, h4 {
+  display: inline-block; /* so width animation works */
   width: 20ch;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid black; /* مؤشر الكتابة */
+  border-right: 2px solid black;
   animation: typing 8s steps(25) infinite, blink 0.9s step-start infinite;
-  text-align: center;
+  text-align: left; /* keeps letters flowing naturally */
+}
+
+.wrapper {
+  text-align: center; /* this centers the element itself */
 }
