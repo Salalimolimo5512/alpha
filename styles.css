@@ -254,4 +254,5 @@ footer {
     width: 20ch;
     animation: typing 8s steps(25) infinite;
     blink: 0.9s step-start infinite;
+    text-align: center; 
  }
